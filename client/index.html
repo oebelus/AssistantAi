@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>AI Powered Chatbot</title>
+ </head>
+
+<body class="bg-gray-900 font-mono text-gray-200 \">
+  <header class="p-4">
+    <div class="container flex justify-between h-16 mx-auto">
+      <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" class="flex items-center p-2">
+        <p class="text-2xl font-sans font-semibold">{ YourAssistant 🤖 }</p>
+      </a>
+    </div>
+  </header>
+
+  <div class="">
+    <section>
+      <div
+        class="container mx-auto flex flex-col items-center px-4 text-center py-10 md:px-10 lg:px-32 xl:max-w-4xl">
+        <h1 class="text-4xl font-bold sm:text-6xl">Empower Your<br>
+          <span class="dark:text-purple-600">Customer Service </span><br>with Intelligent AI Assistance
+        </h1>
+        <p class="mt-8 mb-12 text-lg md:text-2xl">Instantly get accurate answers with our 24/7 AI assistant—your go-to for seamless
+          information and support. <br>
+          <span class="text-[#41B6F4]">></span> Click on the circle below and try it now :D</p>
+      </div>
+    </section>
+    
+    <section class="mb-8 container mx-auto flex flex-col items-center px-4 text-center md:px-10 lg:px-32 xl:max-w-3xl">
+      <div class="card bg-gray-800 text-gray-100 rounded-lg shadow-lg p-6 w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-4">Rate Us</h2>
+        <form action="#" method="POST">
+          <div class="flex flex-col justify-between">
+            <div class="mb-4">
+              <input type="text" id="name" name="name" placeholder="Enter your name" required
+                class="w-full p-2 border border-gray-700 rounded-lg bg-gray-900 text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500" />
+            </div>
+            <div class="star-rating mb-4 flex justify-center">
+              <input type="radio" id="star5" name="rating" value="5" />
+              <label for="star5" title="5 stars" class="cursor-pointer">★</label>
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4" title="4 stars" class="cursor-pointer">★</label>
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3" title="3 stars" class="cursor-pointer">★</label>
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2" title="2 stars" class="cursor-pointer">★</label>
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label for="star1" title="1 star" class="cursor-pointer">★</label>
+            </div>
+          </div>
+          <button id="submit-button" type="submit" class="bg-purple-600 text-white p-2 rounded-lg hover:bg-purple-500">Submit</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <div>
+    <div id="chatbot" class="hidden justify-center items-center fixed md:bottom-24 bottom-32 md:right-28">
+      <div class="chatbot-container bg-gray-800 text-gray-100 rounded-lg shadow-lg w-96 h-[600px] flex flex-col">
+        <div class="chatbot-header bg-purple-600 text-white p-4 rounded-t-lg">
+          <h1 class="text-xl font-semibold flex gap-2">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-1" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#e8eaed">
+                <path
+                  d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm200-80q25 0 42.5-17.5T420-500q0-25-17.5-42.5T360-560q-25 0-42.5 17.5T300-500q0 25 17.5 42.5T360-440Zm240 0q25 0 42.5-17.5T660-500q0-25-17.5-42.5T600-560q-25 0-42.5 17.5T540-500q0 25 17.5 42.5T600-440ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z" />
+              </svg>
+            </span>
+            <span>AI Customer Support</span>
+          </h1>
+        </div>
+        <div class="chatbot-body flex flex-col gap-4 flex-1 p-4 overflow-y-auto" id="chatbot-body">
+          <!-- Messages will go here -->
+        </div>
+        <div class="chatbot-input-container flex p-2 border-t border-gray-700">
+          <input required type="text" id="chatbot-input" placeholder="Type a message..."
+            class="flex-1 p-2 border border-gray-700 rounded-l-lg bg-gray-900 text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500">
+          <button id="send-button" class="bg-purple-600 text-white p-2 rounded-r-lg hover:bg-purple-500">
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="open-chat"
+      class="rounded-full bg-purple-300 w-16 h-16 absolute bottom-10 right-10 shadow-md shadow-purple-600 hover:bottom-12 transition-all cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" class="top-6 left-5 absolute" viewBox="0 -960 960 960"
+        width="24px" fill="#272737">
+        <path
+          d="M280-240q-17 0-28.5-11.5T240-280v-80h520v-360h80q17 0 28.5 11.5T880-680v600L720-240H280ZM80-280v-560q0-17 11.5-28.5T120-880h520q17 0 28.5 11.5T680-840v360q0 17-11.5 28.5T640-440H240L80-280Zm520-240v-280H160v280h440Zm-440 0v-280 280Z" />
+      </svg>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
