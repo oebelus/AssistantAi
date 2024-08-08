@@ -36,3 +36,5 @@ AssistantAi is an AI-powered customer assistant chatbot built with Java and Spri
 ## Pictures
 
 ![page](./picture.png)
+
+- The Card where the rating is was found here: https://uiverse.io/Pravins01/odd-fly-66
